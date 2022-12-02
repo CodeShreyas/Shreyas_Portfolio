@@ -7,6 +7,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+
 const btnScrollToTop = document.querySelector("#btnScrollToTop");
 
 window.addEventListener("scroll", scrollFunction);
