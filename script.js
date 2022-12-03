@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 var typed = new Typed(".auto-input", {
-    strings: ["Shreyas Deshpande", "a web developer", "a Coder", "a keen learner"],
+    strings: ["am Shreyas", "am a coder", "love web dev", "love learning"],
     typespeed: 100,
     loop: true
 })
