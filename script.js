@@ -137,3 +137,9 @@ document.addEventListener('DOMContentLoaded', function(){
     }
     document.head.append(script);
 });
+
+var typed = new Typed(".auto-input", {
+    strings: ["Shreyas Deshpande", "a web developer", "a Coder", "a keen learner"],
+    typespeed: 100,
+    loop: true
+})

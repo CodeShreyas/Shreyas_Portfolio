@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
 .nav {
     margin-top: 30px;
 }
@@ -182,3 +184,4 @@
     pointer-events: none;
     z-index: 1000;
 }
+
