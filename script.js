@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 },
                 "move": {
                     "enable": true,
-                    "speed": 5,
+                    "speed": 2,
                     "direction": "bottom",
                     "random": true,
                     "straight": false,
@@ -140,6 +140,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
 var typed = new Typed(".auto-input", {
     strings: ["am Shreyas", "am a coder", "love web dev", "love learning"],
-    typespeed: 100,
-    loop: true
+    loop: true,
+    typeSpeed: 100,
 })
