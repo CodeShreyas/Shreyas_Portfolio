@@ -73,70 +73,22 @@ window.addEventListener('resize', function(e) {
         christmas.create();
     }, 100)
 });
-document.addEventListener('DOMContentLoaded', function(){
-    var script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
-    script.onload = function(){
-        particlesJS("snow", {
-            "particles": {
-                "number": {
-                    "value": 200,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#ffffff"
-                },
-                "opacity": {
-                    "value": 0.7,
-                    "random": false,
-                    "anim": {
-                        "enable": false
-                    }
-                },
-                "size": {
-                    "value": 5,
-                    "random": true,
-                    "anim": {
-                        "enable": false
-                    }
-                },
-                "line_linked": {
-                    "enable": false
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 2,
-                    "direction": "bottom",
-                    "random": true,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                    "attract": {
-                        "enable": true,
-                        "rotateX": 300,
-                        "rotateY": 1200
-                    }
-                }
-            },
-            "interactivity": {
-                "events": {
-                    "onhover": {
-                        "enable": false
-                    },
-                    "onclick": {
-                        "enable": false
-                    },
-                    "resize": false
-                }
-            },
-            "retina_detect": true
-        });
-    }
-    document.head.append(script);
-});
+
+const snow = document.querySelector('#snow');
+const jesus = document.querySelector('#jesus');
+const normal = document.querySelector('#normal-button');
+const diwali = document.querySelector('#diwali')
+
+jesus.addEventListener('click', () => {
+   snow.classList.add('snow')
+   console.log("snow id applied!");
+})
+normal.addEventListener('click', () => {
+   snow.classList.remove('snow')
+   console.log("snow id removed!");
+})
+
+
 
 var typed = new Typed(".auto-input", {
     strings: ["am Shreyas", "am a coder", "love web dev", "love learning"],
@@ -146,12 +98,12 @@ var typed = new Typed(".auto-input", {
 
 const dropdowns = document.querySelectorAll('.dropdown');
 
-dropdowns.forEach(dropdown => {
-    const select = dropdown.querySelector('.select');
-    const caret = dropdown.querySelector('.caret');
-    const menu = dropdown.querySelector('.menu');
-    const options = dropdown.querySelector('.menu li');
-    const selected = dropdown.querySelector('.selected');
+dropdowns.forEach(dropdowns => {
+    const select = dropdowns.querySelector('.select');
+    const caret = dropdowns.querySelector('.caret');
+    const menu = dropdowns.querySelector('.menu');
+    const options = dropdowns.querySelector('.menu li');
+    const selected = dropdowns.querySelector('.selected');
 
     select.addEventListener('click', () => {
         select.classList.toggle('select-clicked');
@@ -159,9 +111,9 @@ dropdowns.forEach(dropdown => {
         menu.classList.toggle('menu-open');
     });
 
-    options.forEach(option => {
-        option.addEventListener('click', () => {
-            selected.innerText = option.innerText;
+    Array.from(options).forEach(options => {
+        options.addEventListener('click', () => {
+            selected.innerText = options.innerText;
             select.classList.remove('select-clicked');
             caret.classList.remove('caret-rotate');
             menu.classList.remove('menu-open');
@@ -172,3 +124,6 @@ dropdowns.forEach(dropdown => {
         });
     });
  });
+
+
+
