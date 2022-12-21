@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
 
 .nav {
     margin-top: 30px;
@@ -163,3 +164,64 @@
     }
 }
 
+.container1 {
+    font-family: 'Sacramento', cursive;
+    height: 200px;
+    width: 600px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.container1 .title {
+    font-size: 5rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    text-shadow: 0px 2px 1px orange, 0px 0px 6px orangered, 0px 0px 5px rgba(0, 0, 0, 1);
+}
+.diwali {
+    list-style-type: none;
+    padding: 0;
+}
+.diwali li {
+    display: inline-block;
+    margin: 20px;
+    height: 50px;
+    width: 50px;
+    border-radius: 500px;
+    position: relative;
+    background-color: #8d6e63;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.diwali li::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    background-color: darkgoldenrod;
+    width: 100%;
+    border-radius: 500px;
+    top: -40%;
+    left: 30%;
+}
+.diwali li::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    background-color: darkgoldenrod;
+    width: 100%;
+    border-radius: 500px;
+    top: -40%;
+    left: 30%;
+}
+.diwali li span {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1;
+}
