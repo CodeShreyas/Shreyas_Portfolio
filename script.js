@@ -78,15 +78,41 @@ const snow = document.querySelector('#snow');
 const jesus = document.querySelector('#jesus');
 const normal = document.querySelector('#normal-button');
 const diwali = document.querySelector('#diwali')
+const container = document.querySelector('.container2'); 
+const ul = document.querySelector('.diwali2'); 
+const title = document.createElement('DIV');
+title.innerHTML = "Happy Diwali"
+
+
+
 
 jesus.addEventListener('click', () => {
-   snow.classList.add('snow')
-   console.log("snow id applied!");
+    snow.classList.add('snow')
+    container.removeChild(title);
+     console.log("snow id applied!");
+   container.classList.remove('container1')
+   title.classList.remove('title')
+   ul.classList.remove('diwali')
 })
 normal.addEventListener('click', () => {
-   snow.classList.remove('snow')
-   console.log("snow id removed!");
+    snow.classList.remove('snow')
+    container.removeChild(title);
+    console.log("snow id removed!");
+   container.classList.remove('container1')
+   title.classList.remove('title')
+   ul.classList.remove('diwali')
 })
+
+diwali.addEventListener('click', () => {
+    title.classList.add('title2'); 
+    container.appendChild(title);
+   snow.classList.remove('snow')
+   container.classList.add('container1')
+   title.classList.add('title')
+   ul.classList.add('diwali')
+   console.log("diwali id applied!");
+})
+
 
 
 

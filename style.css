@@ -164,64 +164,168 @@
     }
 }
 
+@import url('https://fonts.googleapis.com/css?family=Sacramento');
+
 .container1 {
+    background-color: hsla(231, 39%, 14%, 0.161);
     font-family: 'Sacramento', cursive;
-    height: 200px;
-    width: 600px;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+height: 200px;
+width: 600px;
+position: fixed;
+top: 0;
+bottom: 0;
+left: 0px;
+right: 12;
+margin: auto;
 }
 .container1 .title {
-    font-size: 5rem;
-    color: rgba(255, 255, 255, 0.5);
-    text-align: center;
-    text-shadow: 0px 2px 1px orange, 0px 0px 6px orangered, 0px 0px 5px rgba(0, 0, 0, 1);
+font-size: 5rem;
+z-index: 1;
+color: rgba(255, 255, 255, 0.5);
+text-align: center;
+text-shadow: 0px 2px 1px orange, 0px 0px 6px orangered, 0px 5px 10px rgba(0, 0, 0, 1);
 }
 .diwali {
-    list-style-type: none;
-    padding: 0;
+list-style-type: none;
+padding: 0;
 }
 .diwali li {
-    display: inline-block;
-    margin: 20px;
-    height: 50px;
-    width: 50px;
-    border-radius: 500px;
-    position: relative;
-    background-color: #8d6e63;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+display: inline-block;
+margin: 20px;
+height: 50px;
+width: 50px;
+border-radius: 500px;
+position: relative;
+background-color: #8d6e63;
+box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
 }
 .diwali li::before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    background-color: darkgoldenrod;
-    width: 100%;
-    border-radius: 500px;
-    top: -40%;
-    left: 30%;
+content: "";
+position: absolute;
+height: 100%;
+background-color: hsla(231, 39%, 14%, 1.161);
+width: 100%;
+border-radius: 500px;
+top: -40%;
+left: -30%;
 }
 .diwali li::after {
-    content: "";
-    position: absolute;
-    height: 100%;
-    background-color: darkgoldenrod;
-    width: 100%;
-    border-radius: 500px;
-    top: -40%;
-    left: 30%;
+content: "";
+position: absolute;
+height: 100%;
+background-color: hsla(231, 39%, 14%, 1.151);
+width: 100%;
+border-radius: 500px;
+top: -40%;
+right: -30%;
 }
 .diwali li span {
-    display: inline-block;
-    height: 20px;
-    width: 20px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: auto;
-    z-index: 1;
+display: flexbox;
+height: 20px;
+width: 20px;
+position: absolute;
+left: 0;
+right: 0;
+margin: auto;
+z-index: 1;
+border-bottom-left-radius: 50px;
+border-bottom-right-radius: 50px;
+border-top-right-radius: 50px;
+transform: rotate(45deg);
+animation: fire 0.3s ease infinite;
 }
+.diwali li:nth-child(1) span {
+animation-delay: 0.25s;
+}
+.diwali li:nth-child(2) span {
+animation-delay: .5s;
+}
+.diwali li:nth-child(3) span {
+animation-delay: .75s;
+}
+.diwali li:nth-child(4) span {
+animation-delay: 1s;
+}
+.diwali li:nth-child(5) span {
+animation-delay: 1.25s;
+}
+.diwali li:nth-child(6) span {
+animation-delay: 1.5s;
+}
+
+@keyframes fire {
+0%, 100% {
+transform: rotate(55deg);
+width: 20px;
+background: linear-gradient(90deg, orange, orangered);
+}
+50% {
+transform: rotate(35deg);
+width: 18px;
+background: linear-gradient(90deg, orangered, orange);
+}
+}
+
+.container3 {
+    position: absolute;
+    top: 80px;
+    right: 100px;
+    left: 100px;
+    bottom: 80px;
+    background: url(images/R.jfif);
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 50px 50px rgba(0, 0, 0, 0.5),
+                0 0 0 100px rgba(0, 0, 0, 0.1);
+}
+
+.container3 h2 {
+    text-align: center;
+    font-size: 10em;
+    line-height: 0.7em;
+    color: #333;
+    margin-top: -80px;
+}
+
+.container3 h2 span {
+    display: block;
+    font-weight: 300;
+    letter-spacing: 6px;
+    font-size: 0.2em;
+}
+
+.countdown {
+    display: flex;
+    margin-top: 50px;
+}
+
+.countdown div {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    color: #fff;
+    margin: 0 15px;
+    font-size: 3em;
+    font-weight: 500;
+
+}
+
+.countdown div:before {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: #ff0;
+    color: #333;
+    font-style: 0.35em;
+    line-height: 35px;
+    font-weight: 300;
+}
+
