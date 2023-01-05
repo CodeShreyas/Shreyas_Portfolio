@@ -575,3 +575,65 @@ else
   console.log(LetterChanges("PYTHON"));
 console.log(LetterChanges("W3R"));
 console.log(LetterChanges("php"));
+
+console.log(line)
+
+// Write a JavaScript program to capitalize the first letter of each word of a given string.
+function capital_letter(str) {
+  str = str.split(" ")
+  for (var i = 0, x = str.length; i < x; i++) {
+    str[i] = str[i][0].toUpperCase() + str[i].substr(1);
+  }
+
+  return str.join(" ")
+}
+console.log(capital_letter("Write a JavaScript program to capitalize the first letter of each word of a given string."));
+
+console.log(line)
+
+// Write a JavaScript program to convert a given number to hours and minutes
+function time_convert(num) {
+    var hours = Math.floor(num / 60);
+    var minutes = num % 60;
+    
+    return hours + ":" + minutes; 
+}
+console.log(time_convert(69));
+console.log(time_convert(911));
+console.log(time_convert(100));
+
+console.log(line) 
+
+// Write a JavaScript program to convert the letters of a given string in alphabetical order
+function alphabet_Soup(str) {
+  return str.split("").sort().join("");
+}
+console.log(alphabet_Soup("Python"));
+console.log(alphabet_Soup("Exercises"));
+
+console.log(line)
+
+//  Write a JavaScript program to check whether the characters a and b are separated by exactly 3 places anywhere (at least once) in a given string
+function ab_Check(str) {
+  return (/a...b/).test(str) || (/b...a/).test(str)
+}
+console.log(ab_Check("Chainsbreak"));
+console.log(ab_Check("pane borrowed"));
+console.log(ab_Check("abCheck"));
+
+console.log(line)
+
+//Write a JavaScript program to count the number of vowels in a given string
+function vowel_Count(str) {
+  return str.replace(/[^aeiou]/g, "").length
+}
+console.log(vowel_Count("Python"));
+console.log(vowel_Count("codeShreyas.github.io/Shreyas_Portfolio"));
+
+console.log(line)
+
+//  Write a JavaScript program to check whether a given string contains equal number of p's and t'sb
+function equal_pt() {
+  
+}
+
