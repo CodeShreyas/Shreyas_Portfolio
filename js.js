@@ -360,3 +360,218 @@ console.log(check_char("Console", "o"));
 console.log(check_char("Console", "C"));
 console.log(check_char("Console", "e"));
 console.log(check_char("JavaScript", "S"));
+
+console.log(line)
+
+// Write a JavaScript program to check whether the last digit of the three given positive integers is same.
+function last_digit(x, y, z) {
+  if ((x > 0) && y > 0 && z > 0) {
+    return (x % 10 == y % 10 && y % 10 == z % 10 && x % 10 == z % 10);
+  } else {
+    return false;
+  }
+}
+console.log(last_digit(20, 30, 400));
+console.log(last_digit(-20, 30, 400));
+console.log(last_digit(20, -30, 400));
+console.log(last_digit(20, 30, -400));
+
+console.log(line)
+
+// Write a JavaScript program to create a new string with first 3 characters are in lower case from a given string. If the string length is less than 3 convert all the characters in upper case
+function upper_lower(str) {
+  if (str.length < 3) {
+    return str.toUpperCase();
+  }
+  front_part = (str.substring(0, 3)).toLowerCase();
+  back_part = str.substring(3, str.length);
+  return front_part + back_part
+}
+console.log(upper_lower("Python"));
+console.log(upper_lower("Py"));
+console.log(upper_lower("JAVAScript"));
+
+console.log(line)
+
+//Write a JavaScript program to check the total marks of a student in various examinations. The student will get A+ grade if the total marks are in the range 89..100 inclusive, if the examination is "Final-exam." the student will get A+ grade where total marks must be greater than or equal to 90. Return true if the student get A+ grade or false otherwise
+function exam_status(totmarks, is_exam) {
+  if (is_exam) {
+    return totmarks >= 90;
+  }
+  return (totmarks >= 89 && totmarks <= 100);
+}
+console.log(exam_status("78", " "));
+console.log(exam_status("89", "true "));
+console.log(exam_status("99", "true "));
+
+console.log(line);
+
+// Write a JavaScript program to compute the sum of the two given integers, If the sum is in the range 50..80 return 65 other wise return 80.
+function sortaSum(x, y) {
+  const sum_nums = x + y
+  if (sum_nums >= 50 && sum_nums <= 80) {
+    return 65;
+  } else {
+    return 80;
+  }
+}
+console.log(sortaSum(30,20));
+console.log(sortaSum(90,80));
+
+console.log(line)
+
+//Write a JavaScript program to check from two given integers whether one of them is 8 or their sum or difference is 8
+function check8(x, y) {
+  if (x == 8 || y == 8) {
+    return true;
+  } else if ((x + y )== 8 || Math.abs(x - y) == 8) {
+    return true;
+  } else {
+    return false
+  }
+}
+console.log(check8(7, 8));
+console.log(check8(16, 8));
+console.log(check8(24, 32));
+console.log(check8(17, 18));
+
+console.log(line)
+
+//Write a JavaScript program to check three given numbers, if the three numbers are same return 30 otherwise return 20 and if two numbers are same return 40
+function three_numbers(x, y, z) {
+  if (x == y && y == z) {
+    return 30;
+  } else if (x == y || y == z || x == z) {
+      return 40;
+  } else {
+    return 20;
+  }
+}
+console.log(three_numbers(8, 8, 8));
+console.log(three_numbers(8, 8, 18));
+console.log(three_numbers(8, 7, 18));
+
+console.log(line);
+
+// Write a JavaScript program to check whether three given numbers are increasing in strict mode or in soft mode
+function number_order(x, y, z) {
+  if (y > x && z > y) {
+    return "strict mode";
+  } else if (z > y){
+    return "soft mode";
+    } else {
+      return "undefined";
+    }
+}
+console.log(number_order(10,15,31));
+console.log(number_order(24,22,31));
+console.log(number_order(50,21,15));
+
+console.log(line);
+
+//Write a JavaScript program to check from three given numbers (non negative integers) that two or all of them have the same rightmost digit
+function same_last_digit(p, q, r) {
+  return (p % 10 === q % 10)  ||
+         (p % 10 === r % 10)  ||
+         (q % 10 === r % 10)
+}
+console.log(same_last_digit(22,32,42));
+console.log(same_last_digit(102,302,2));
+console.log(same_last_digit(20,22,45));
+
+console.log(line)
+
+//Write a JavaScript program to check from three given integers that whether a number is greater than or equal to 20 and less than one of the others
+function lessby20_others(x, y, z) {
+  return (x >= 20 && (x < y || x < z)) ||
+         (y >= 20 && (y < x || y < z)) ||
+         (z >= 20 && (z < y || z < x));
+}
+console.log(lessby20_others(23, 45, 10));
+console.log(lessby20_others(23, 23, 10));
+console.log(lessby20_others(21, 66, 75));
+
+console.log(line)
+
+// Write a JavaScript program to check two given integer values and return true if one of the number is 15 or if their sum or difference is 15
+function test15(x, y) {
+  if (x === 15 || y === 15 || x + y === 15 || Math.abs(x - y) === 15) {
+    return true;
+  } else {
+    return false;
+    }
+}
+console.log(test15(15, 9));
+console.log(test15(25, 15));
+console.log(test15(7, 8));
+console.log(test15(25, 10));
+console.log(test15(5, 9));
+console.log(test15(7, 9));
+console.log(test15(9, 25));
+
+console.log(line)
+
+// Write a JavaScript program to check two given non-negative integers that whether one of the number (not both) is multiple of 7 or 11
+function valCheck (a, b) {
+  if (!((a % 7 == 0 || a % 11 == 0) && (b % 7 == 0 || b % 11 == 0))) {
+  return ((a % 7 == 0 || a % 11 == 0) || (b % 7 == 0 || b % 11 == 0));
+  }
+else
+  return false;
+  }
+  console.log(valCheck(14, 21));
+  console.log(valCheck(14, 20));
+  console.log(valCheck(16, 20));
+
+  console.log(line)
+
+  // Write a JavaScript program to check whether a given number is presents in the range 40..10000
+  function checkNumbers(x) {
+    if (x >= 40 && x <= 10000) {
+      return "Inputted number is in the range! :)"
+    }  else {
+        return "Inputted number is not in the range, :("
+       }
+  }
+  console.log(checkNumbers(0))
+  console.log(checkNumbers(69))
+
+  console.log(line)
+
+  // Write a JavaScript program to reverse a given string
+  function string_reverse(str) {
+    return str.split("").reverse().join("")
+  }
+  console.log(string_reverse("w3resource"));
+  console.log(string_reverse("www"));
+  console.log(string_reverse("JavaScript"));
+
+  console.log(line)
+
+  //Write a JavaScript program to replace every character in a given string with the character following it in the alphabet
+  function LetterChanges(text) {
+    var s = text.split("")
+    for (var i = 0; i < s.length; i++) {
+      switch(s[i]) {
+        case "":
+        break;
+        case "z":
+        s[i] = "a"
+        break;
+        case "Z":
+        s[i] = "A"
+        break;
+        default:
+        s[i] = String.fromCharCode(1 + s[i].charCodeAt(0));
+      }
+
+      switch(s[i]) {
+        case "a": case "e": case "i": case "o": case "u" :
+        s[i] = s[i].toUpperCase();
+      }
+    }
+    return s.join('')
+  }
+  console.log(LetterChanges("PYTHON"));
+console.log(LetterChanges("W3R"));
+console.log(LetterChanges("php"));
