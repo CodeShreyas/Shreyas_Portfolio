@@ -633,7 +633,391 @@ console.log(vowel_Count("codeShreyas.github.io/Shreyas_Portfolio"));
 console.log(line)
 
 //  Write a JavaScript program to check whether a given string contains equal number of p's and t'sb
-function equal_pt() {
-  
+function equal_pt(str) {
+   var str_p = str.replace(/[^p]/g, "");
+
+  var str_t = str.replace(/[^t]/g, "");
+
+  var p_num = str_p.length;
+  var s_num = str_t.length;
+
+  return p_num === s_num;
 }
+console.log(equal_pt("paatpss"));
+console.log(equal_pt("paatps"));
+
+console.log(line)
+
+//JavaScript program to divide two positive numbers and return the result as string with properly formatted commas
+n1 = 80;
+n2 = 6;
+  
+var div = Math.round(n1 / n2).toString(),
+        result_array = div.split("");
+
+    if (div >= 1000)
+       {
+        for (var i = div.length - 3; i > 0; i -= 3) 
+        {
+            result_array.splice(i, 0, ",");
+        }
+          result_array;
+    }
+console.log(result_array);
+
+console.log(line)
+
+//Write a JavaScript program to create a new string of specified copies (positive number) of a given string
+function string_copies(str, n) {
+  if (n < 0) {
+    return false;
+  } else {
+      return str.repeat(n)
+    }
+}
+console.log(string_copies("abc", 5));
+console.log(string_copies("abc", 0));
+console.log(string_copies("abc", -2));
+
+console.log(line)
+
+//Write a JavaScript program to create a new string of 4 copies of the last 3 characters of a given original string. The length of the given string must be 3 and above
+function newstring(str) {
+  if (str.length >= 3) {
+    result_str = str.substring(str.length - 3)
+    return result_str + result_str + result_str + result_str
+  } else {
+    return false
+    }
+}
+console.log(newstring("Python 3.0"));
+console.log(newstring("JS"));
+console.log(newstring("JavaScript"));
+
+console.log(line)
+
+// Write a JavaScript program to extract the first half of a string of even length
+function first_half(str) {
+  if (str.length % 2 == 0) {
+    return str.slice(0, str.length / 2)
+  }
+  return str
+}
+console.log(first_half("Python"));  
+console.log(first_half("JavaScript")); 
+console.log(first_half("PHP"));
+
+console.log(line)
+
+// Write a JavaScript program to create a new string without the first and last character of a given string
+function without_first_end(str) {
+  return str.substring(1, str.length - 1)
+}
+console.log(without_first_end('JavaScript'));
+console.log(without_first_end('JS'));
+console.log(without_first_end('PHP'));
+
+console.log(line)
+
+//  Write a JavaScript program to concatenate two strings except their first character
+function concatenate(str1, str2) {
+  str1 = str1.substring(1, str1.length)
+  str2 = str2.substring(1, str2.length)
+  return str1 + str2
+}
+console.log(concatenate("PHP","JS"));
+console.log(concatenate("A","B"));
+console.log(concatenate("AA","BB"));
+
+console.log(line)
+
+// Write a JavaScript program to move last three character to the start of a given string. The string length must be greater or equal to three
+function right_three(str) {
+  if(str.length > 1) {
+    return str.slice(-3) + str.slice(0, -3)
+  }
+  return str
+}
+console.log(right_three("Python"));
+console.log(right_three("JavaScript"));
+console.log(right_three("Hi"));
+
+console.log(line)
+
+//  Write a JavaScript program to create a string using the middle three characters of a given string of odd length. The string length must be greater or equal to three
+function middle_three(str) {
+  if(str.length % 2!= 0) {
+    mid = (str.length + 1)/2
+    return str.slice(mid -2, mid + 1)
+  }
+  return str
+}
+console.log(middle_three('abcdefg'));
+console.log(middle_three('HTML5'));
+console.log(middle_three('Python'));
+console.log(middle_three('PHP'));
+console.log(middle_three('Exercises'));
+
+console.log(line)
+
+// Write a JavaScript program to concatenate two strings and return the result. If the length of the strings are not same then remove the characters from the longer string
+function str_con_cat(str1, str2) {
+  const m = Math.min(str1.length, str2.length)
+  return str1.substring(str1.length - m) + str2 .substring(str2.length - m)
+}
+console.log(str_con_cat("Python", "JS"));
+console.log(str_con_cat("ab", "cdef"));
+
+console.log(line)
+
+// Write a JavaScript program to test whether a string end with "Script". The string length must be greater or equal to 6
+function end_script(str) {
+  if (str.substring(str.length - 6, str.length) == "Script") {
+    return true
+  } else {
+    return false
+    }
+}
+console.log(end_script("JavaScript"));
+console.log(end_script("Java Script"));
+console.log(end_script("Java Scripts"));
+
+console.log(line)
+
+// Write a JavaScript program to display the city name if the string begins with "Los" or "New" otherwise return blank
+function city_name(str) {
+  if (str.length >= 3 && ((str.substring(0, 3) == "Los") || (str.substring(0, 3) == "New"))) {
+    return str;
+  } else {
+    return ''
+    }
+}
+console.log(city_name("New York"));
+console.log(city_name("Los Angeles"));
+console.log(city_name("London"));
+
+console.log(line)
+
+//  Write a JavaScript program to create a new string from a given string, removing the first and last characters of the string if the first or last character are 'P'. Return the original string if the condition is not satisfied
+function nop(str) {
+  let start_pos = 0;
+  let end_pos = str.length;
+
+  if (str.length > 0 && str.charAt(0) == 'P') 
+    { 
+      start_pos = 1; 
+    }
+
+  if (str.length > 1 && str.charAt(str.length - 1) == 'P') 
+  {
+    end_pos--;
+  }
+
+  return str.substring(start_pos, end_pos);
+}
+
+console.log(nop("PythonP"));
+console.log(nop("Python"));
+console.log(nop("JavaScript"));
+
+console.log(line)
+
+// Write a JavaScript program to create a new string using the first and last n characters from a given sting. The string length must be greater or equal to n
+function two_string(str, n) {
+  first_part = str.substring(0, n)
+  last_part = str.substring(str.length - n)
+  return first_part + last_part
+}
+console.log(two_string("JavaScript", 2));
+console.log(two_string("JavaScript", 3));
+
+console.log(line)
+
+// Write a JavaScript program to compute the sum of three elements of a given array of integers of length 3
+function sum_three(nums) {
+  return nums[0] + nums[1] + nums[2]
+}
+console.log(sum_three([10, 32, 20]));  
+console.log(sum_three([5, 7, 9])); 
+console.log(sum_three([0, 8, -11]));
+
+console.log(line)
+
+// Write a JavaScript program to rotate the elements left of a given array of integers of length 3
+function rotate_elements_left(array) {
+  return [array[1], array[2], array[0]]
+}
+console.log(rotate_elements_left([3, 4, 5]));  
+console.log(rotate_elements_left([0, -1, 2]));  
+console.log(rotate_elements_left([7, 6, 5])); 
+
+console.log(line)
+
+// Write a JavaScript program to check whether 1 appears in first or last position of a given array of integers. The array length must be greater or equal to 1
+function first_last_1(nums) {
+  var end_pos = nums.length - 1
+  return nums[0] == 1 || nums[end_pos] == 1
+}
+console.log(first_last_1([1, 3, 5]));
+console.log(first_last_1([1, 3, 5, 1]));
+console.log(first_last_1([2, 4, 6]));
+
+console.log(line)
+
+// Write a JavaScript program to check whether the first and last elements are equal of a given array of integers length 3
+function first_last_same(nums) {
+  var end = nums.length -1
+  if (nums.length >= 1) {
+    return nums[0] == nums[end]
+  } else {
+    return false
+    }
+}
+console.log(first_last_same([10, 20, 30])); 
+console.log(first_last_same([10, 20, 30, 10])); 
+console.log(first_last_same([20, 20, 20]));
+
+console.log(line)
+
+// Write a JavaScript program to reverse the elements of a given array of integers length 3
+function reverse3(array) {
+  return array.map((element, idx, arr) => arr[(arr.length - 1) - idx])
+}
+console.log(reverse3([5, 4, 3])); 
+console.log(reverse3([1, 0, -1]));  
+console.log(reverse3([2, 3, 1]));
+
+console.log(line)
+
+// Write a JavaScript program to find the larger value between the first or last and set all the other elements with that value. Display the new array
+function all_max(nums) {
+  var max_val = nums[0] > nums[2] ? nums[0] : nums[2]
+  nums[0] = max_val
+  nums[1] = max_val
+  nums[2] = max_val
+  return nums
+}
+console.log(all_max([20, 30, 40]));
+console.log(all_max([-7, -9, 0]));
+console.log(all_max([12, 10, 3]));
+
+console.log(line)
+
+// Write a JavaScript program to create a new array taking the middle elements of the two arrays of integer and each length 3
+function middle_elements(a, b) {
+  var new_array = []
+  new_array.push(a[1], b[1])
+
+  return new_array
+}
+console.log(middle_elements([1, 2, 3], [1, 5, 6]));  
+console.log(middle_elements([3, 3, 3], [2, 8, 0]));  
+console.log(middle_elements([4, 2, 7], [2, 4, 5])); 
+
+console.log(line)
+
+// Write a JavaScript program to create a new array taking the first and last elements from a given array of integers and length must be greater or equal to 1
+function started(nums) {
+  var array1 = []
+  array1.push(nums[0], nums[nums.length - 1])
+
+  return array1
+}
+console.log(started([20, 20, 30]));
+console.log(started([5, 2, 7, 8]));
+console.log(started([17, 12, 34, 78])); 
+
+console.log(line)
+
+// Write a JavaScript program to test whether an array of integers of length 2 contains 1 or a 3
+function contains13(nums) {
+  if(nums.indexOf(1) != 1 || nums.indexOf(3) != -1) {
+    return true
+  } else {
+    return false
+  }
+}
+console.log(contains13([1, 5]));  
+console.log(contains13([2, 3]));  
+console.log(contains13([7, 5])); 
+
+console.log(line)
+
+// Write a JavaScript program to test whether an array of integers of length 2 does not contain 1 or a 3
+function is13(nums) {
+  if(nums.indexOf(1) === -1 && nums.indexOf(3) === -1) {
+    return true
+  } else {
+    return false
+  }
+}
+console.log(is13([7, 8]));
+console.log(is13([3, 2]));
+console.log(is13([0, 1])); 
+
+console.log(line)
+
+//  Write a JavaScript program to test whether a given array of integers contains 30 and 40 twice. The array length should be 0, 1, or 2
+function twice3040(array1) {
+  let a = array1[0]
+  let b = array1[1]
+  return (a === 30 && b === 30) || (a === 40 && b === 40)
+}
+console.log(twice3040([30, 30]));
+console.log(twice3040([40, 40]));
+console.log(twice3040([20, 20]));
+console.log(twice3040([30]));
+
+console.log(line)
+
+// Write a JavaScript program to swap the first and last elements of a given array of integers. The array length should be at least 1
+function swap(array) {
+  [array[0], array[array.length - 1]] = [array[array.length - 1], array[0]]
+  return array
+}
+console.log(swap([1, 2, 3, 4]));  
+console.log(swap([0, 2, 1]));  
+console.log(swap([3])); 
+
+console.log(line)
+
+// Write a JavaScript program to add two digits of a given positive integer of length two
+function add_two_digits(n) {
+  return n % 10 + Math.floor(n / 10)
+}
+console.log(add_two_digits(25))
+console.log(add_two_digits(50))
+
+console.log(line)
+
+// Write a JavaScript to add two positive integers without carry.
+function add_two_int_without_carrying(n1, n2) {
+    var result = 0,
+        x = 1
+      while (n1 > 0 && n2 > 0) {
+          result += x * ((n1 + n2) % 10)
+          n1 = Math.floor(n1 / 10);
+          n2 = Math.floor(n2 / 10);
+          x*= 10;
+      }
+      return result
+}
+console.log(add_two_int_without_carrying(222, 911))
+console.log(add_two_int_without_carrying(200, 900))
+
+console.log(line)
+
+// Write a JavaScript to find the longest string from a given array of strings
+function longest_string(str_array) {
+  var max = str_array[0].length
+  str_array.map(v => max = Math.max(max, v.length))
+  result = str_array.filter(v => v.length == max)
+  return result
+}
+console.log(longest_string(['a', 'aa', 'aaa', 'aaaaa','aaaa']))
+
+console.log(line)
+
+// Write a JavaScript to replace each character of a given string by the next one in the English alphabet
+
 
