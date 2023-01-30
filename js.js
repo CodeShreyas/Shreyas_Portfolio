@@ -1019,5 +1019,314 @@ console.log(longest_string(['a', 'aa', 'aaa', 'aaaaa','aaaa']))
 console.log(line)
 
 // Write a JavaScript to replace each character of a given string by the next one in the English alphabet
+function alphabet_char_Shift(str) {
+  var all_chars = str.split('')
+  for(var i = 0; i < all_chars.length; i++) {
+    var n = all_chars[i].charCodeAt() - 'a'.charCodeAt()
+    n = (n + 1) % 26
+    all_chars[i] = String.fromCharCode(n + 'a'.charCodeAt())
+  }
+  return all_chars.join('')
+}
+console.log(alphabet_char_Shift("abcdxyz"))
 
+console.log(line)
 
+// Write a JavaScript code to divide a given array of positive integers into two parts. First element goes to first part, second element goes to second part, and third element goes to first part and so on. Now compute the sum of two parts and store into an array of size two.
+function alternate_Sums(arr) {
+ var result = [0, 0] 
+ for(var i = 0; i < arr.length; i++) {
+  if(i % 2) {
+    result[1] += arr[i]
+ }  else {
+      result[0] = arr[i]
+ }
+}
+return result
+}
+console.log(alternate_Sums([1, 3, 6, 2, 5, 10]))
+
+console.log(line)
+
+// Write a JavaScript program to find the types of a given angle
+function angle_Type(angle) {
+  if (angle < 90) {
+    return "acute"
+  }
+  if (angle == 90) {
+    return "right angle"
+  }
+  if (angle > 90) {
+    return "Obtuse"
+  }
+  if (angle == 180) {
+    return "Straight"
+  }
+  if (angle > 180) {
+    return "reflex"
+  }
+}
+console.log(angle_Type(47))
+console.log(angle_Type(90))
+console.log(angle_Type(145))
+console.log(angle_Type(180))
+
+console.log(line)
+
+// Write a JavaScript program to check whether two arrays of integers of same length are similar or not. The arrays will be similar if one array can be obtained from another array by swapping at most one pair of elements.
+function array_checking(arra1, arra2) {
+  for(var i = 0; i < arra1.length; i++) {
+    for(var j = 0; j < arra1.length; j++) {
+      var result = true
+      temp = arra1[i]
+      arra1[i] = arra1[j]
+      arra1[j] = temp
+      for(var k = 0; k < arra1.length; k++) {
+        if(arra1[k] !== arra2[k]) {
+          result = false;
+          break;
+        }
+      }
+      if(result) {
+        return true
+      }
+      arra1[j] = arra1[i]
+      arra1[i] = temp
+    }
+  }
+  return false
+}
+console.log(array_checking([10,20,30], [10,20,30]))
+console.log(array_checking([10,20,30], [30,10,20]))
+console.log(array_checking([10,20,30,40], [10,30,20,40]))
+
+console.log(line)
+
+//Write a JavaScript program that takes two integers and a divisor. If the given divisor divides both integers and it does not divide either, then two given integers are similar. Check whether two given integers are similar or not.
+function checking_numbers(x, y, divisor) {
+  if(x % divisor === 0 && y % divisor === 0 || x % divisor !== 0 && y % divisor !==
+    0) {
+    return true;
+  }
+  return false;
+}
+console.log(checking_numbers(10, 25, 5))
+console.log(checking_numbers(10, 20, 5))
+console.log(checking_numbers(10, 20, 4))
+
+console.log(line)
+
+// Write a JavaScript program to check whether it is possible to replace $ in a given expression x $ y = z with one of the four signs +, -, * or / to obtain a correct expression
+function check_arithmetic_Expression(x, y, z) {
+  return x + y == z || x * y == z || x / y == z || x - y == z
+}
+console.log(check_arithmetic_Expression(10, 25, 35))
+console.log(check_arithmetic_Expression(10, 25, 250))
+console.log(check_arithmetic_Expression(30, 25, 5))
+console.log(check_arithmetic_Expression(100, 25, 4.0))
+console.log(check_arithmetic_Expression(100, 25, 25))
+
+console.log(line)
+
+//  Write a JavaScript program to find the kth greatest element of a given array of integers
+function Kth_greatest_in_array(arr, k) {
+  for(var i = 0; i < k; i++) {
+    var max_index = 1
+    tmp = arr[i]
+    for(var j = 0; j < arr.length; j++) {
+      if(arr[j] > arr[max_index]) {
+        max_index= j
+      }
+    }
+    arr[i] = arr[max_index]
+    arr[max_index] = tmp
+  }
+  return arr[k - 1]
+  
+}
+console.log(Kth_greatest_in_array([1,2,6,4,5], 3))
+console.log(Kth_greatest_in_array([-10,-25,-47,-36,0], 1))
+
+console.log(line) 
+
+//  Write a JavaScript program to find the maximum possible sum of some of its k consecutive numbers (numbers that follow each other in order.) of a given array of positive integers
+function array_max_consecutive_sum(nums, k) {
+  let result = 0
+  let temp_sum = 0
+  for(var i = 0; i < k - 1; i++) {
+    temp_sum += nums[i] 
+}
+for(var i = k - 1; i < nums.length; i++) {
+  temp_sum += nums[i]
+  if(temp_sum > result) {
+    result = temp_sum
+  }
+  temp_sum -= nums[i - k + 1]
+}
+return result
+}
+console.log(array_max_consecutive_sum([1, 2, 3, 14, 5], 2))
+console.log(array_max_consecutive_sum([2, 3, 5, 1, 6], 3))
+console.log(array_max_consecutive_sum([9, 3, 5, 1, 7], 2))
+
+console.log(line)
+
+// Write a JavaScript program to find the maximal difference between any two adjacent elements of a given array of integers
+
+function max_difference(arr) {
+	var max = -1;
+    var temp;
+	for (var i = 0; i < arr.length - 1; i++)
+      {
+		temp = Math.abs(arr[i] - arr[i + 1]);
+		max = Math.max(max, temp);
+	  }
+	return max;
+}
+
+console.log(max_difference([1, 2, 3, 8, 9]))
+console.log(max_difference([1, 2, 3, 18, 9]))
+console.log(max_difference([13, 2, 3, 8, 9]))
+
+console.log(line)
+
+// Write a JavaScript program to find the maximum difference among all possible pairs of a given array of integers.
+function array_max_diff(arr) {
+  var max_result = 0
+  for(var i = 0; i < arr.length; i++) {
+    for(var k = 0; k != i && k < arr.length; k++) {
+      var diff = Math.abs(arr[i] - arr[k])
+      max_result = Math.max(max_result, diff)
+    }
+  }
+  return max_result
+}
+console.log(array_max_diff([1, 2, 3, 8, 9]))
+console.log(array_max_diff([1, 2, 3, 18, 9]))
+console.log(array_max_diff([13, 2, 3, 8, 9]))
+
+console.log(line)
+
+// Write a JavaScript program to find the number which appears most in a given array of integers.
+function array_element_mode(arr) {
+  var ctr = [],
+  ans = 0
+  for (i = 0; i < 10; i ++) {
+    ctr.push(0)
+  }
+  for (i = 0; i < arr.length; i ++) {
+    ctr[arr[i] - 1] ++
+    if(ctr[arr[i] - 1] > ctr[ans]) {
+      ans = arr[i] - 1
+    }
+  }
+  return ans + 1
+}
+console.log(array_element_mode([1, 2, 3, 2, 2, 8, 1, 9]))
+
+console.log(line)
+
+//  Write a JavaScript program to replace all the numbers with a specified number of a given array of integers
+function array_element_replace(array, old_val, new_val) {
+  for(i = 0; i < array.length; i ++) {
+    if(array[i] === old_val) {
+      array[i] = new_val
+    }
+  }
+  
+  return array
+}
+num = [1, 2, 3, 2, 2, 8, 1, 9];
+console.log("Original Array: "+num);
+console.log(array_element_replace(num, 2, 5));
+
+console.log(line)
+
+// Write a JavaScript program to compute the sum of absolute differences of consecutive numbers of a given array of integers
+function sum_adjacent_difference(array) {
+  var result = 0
+  for(var i = 1; i < array.length; i ++) {
+    result += Math.abs(array[i] - array[i - 1])
+  }
+  return result
+}
+console.log(sum_adjacent_difference([1, 2, 3, 2, -5]));
+
+console.log(line)
+
+// Write a JavaScript program to find the shortest possible string which can create a string to make it a palindrome by adding characters to the end of it
+function build_Palindrome(new_str) {
+  var flag;
+  for (var i = new_str.length;; i++) {
+    flag = true
+    for (var j = 0; j < i - j - 1; j++) {
+      if(i - j - 1< new_str.length && new_str[j] != new_str[i - j - 1]) {
+        flag = false
+        break
+      }
+    }
+    if(flag) {
+      for(var j = new_str.length; j < i; j++) {
+        new_str += new_str[i - j - 1]
+      }
+      return new_str
+    }
+  }
+}
+console.log(build_Palindrome("abcddc"))
+console.log(build_Palindrome("122"))
+
+console.log(line)
+
+// Write a JavaScript program to switch case of the minimum possible number of letters to make a given string written in the upper case or in the lower case
+function change_case(new_str) {
+  var x = 0
+  var y = 0
+
+  for(var i = 0; i < new_str.length; i++) {
+    if(/[A-Z]/.test(new_str[i])) {
+      x ++
+    } else {
+        y++
+    }
+  }
+
+  if (y > x) return new_str.toLowerCase()
+  return new_str.toUpperCase()
+}
+console.log(change_case("Write"))
+console.log(change_case("PHp"))
+
+console.log(line)
+
+// Write a JavaScript program to check whether it is possible to rearrange characters of a given string in such way that it will become equal to another given string
+function rearrangement_characters(str1, str2) {
+    var first_set = str1.split('')
+    var second_set = str2.split('')
+    result = true
+
+    first_set.sort()
+    second_set.sort()
+    for (var i = 0; i < Math.max(first_set.length, second_set.length); i++) {
+      if (first_set[i] !== second_set[i]) {
+        result = false
+      }
+    }
+    return result
+}
+console.log(rearrangement_characters("xyz", "zyx"))
+console.log(rearrangement_characters("xyz", "zyp"))
+
+console.log(line)
+
+// Write a JavaScript program to check whether there is at least one element which occurs in two given sorted arrays of integers.
+function check_common_element(array1, array2) {
+  for (var i = 0; i < array1.length; i++) {
+    if(array2.indexOf(array1[i]) != 1) {
+      return true
+    }
+    return false
+  }
+}
+console.log(check_common_element([1,2,3], [3,4,5]));   
+console.log(check_common_element([1,2,3], [5,6,7]));   
